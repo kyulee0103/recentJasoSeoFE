@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom'
 import Card from '../Components/Card'
 import Header from '../Components/Header'
 import {styled} from 'styled-components'

@@ -1,5 +1,6 @@
 import {styled} from 'styled-components'
 import Logo from '../assets/logo.png'
+import {useNavigate} from 'react-router-dom'
 
 const Total = styled.div`
     background-color: #ffffff;
@@ -13,7 +14,7 @@ const Total = styled.div`
         font-size: 20px;
         position: absolute;
         right: 62px;
-        margin-right: 12px;
+        margin-right: 18px;
     }
     img {
         width: 163px;
@@ -24,14 +25,23 @@ const Total = styled.div`
 const Main = styled.div`
     width: 100%;
     text-align: center;
+    cursor: pointer;
 `
 
+const ImgBox = styled.div``
 function Header() {
+    const navigate = useNavigate()
     return (
         <>
             <Total>
                 <Main>
-                    <img src={Logo} />
+                    <ImgBox
+                        onClick={() => {
+                            navigate('/')
+                        }}
+                    >
+                        <img src={Logo} />
+                    </ImgBox>
                 </Main>
                 <p>반갑습니다, 회원님!</p>
             </Total>

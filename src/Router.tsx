@@ -2,6 +2,7 @@ import {createBrowserRouter} from 'react-router-dom'
 import App from './App'
 import PickTemplate from './Pages/PickTemplate'
 import Helper from './Pages/Helper'
+import Error from './Pages/Error'
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
                 element: <Helper />,
             },
         ],
+        errorElement: <Error />,
     },
 ])
 export default router

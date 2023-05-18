@@ -4,6 +4,9 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
+import AnswerBox from './AnswerBox'
+import {useRecoilState} from 'recoil'
+import {helperState} from '../recoil/helper'
 
 interface TabPanelProps {
     children?: React.ReactNode
@@ -23,9 +26,7 @@ function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Box sx={{p: 4}}>
-                    <Typography>{children}</Typography>
-                </Box>
+                <Box sx={{p: 4, paddingLeft: '0px', paddingRight: '68px', marginTop: '40px'}}>{children}</Box>
             )}
         </div>
     )
@@ -69,12 +70,16 @@ const theme = createTheme({
         },
     },
 })
-
 export default function BasicTabs() {
-    const [value, setValue] = React.useState(1)
+    const [helperData, setHelperData] = useRecoilState(helperState)
+    const [value, setValue] = React.useState(helperData.id)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue)
+        setHelperData({
+            id: newValue,
+            isFilled: false,
+        })
     }
 
     return (
@@ -107,7 +112,6 @@ export default function BasicTabs() {
                             label={
                                 <Typography
                                     sx={{
-                                        borderRadius: 3,
                                         px: 1,
                                         fontSize: '25px',
                                         color: value === 1 ? '#9180FC' : '#8F98A9',
@@ -123,7 +127,6 @@ export default function BasicTabs() {
                             label={
                                 <Typography
                                     sx={{
-                                        borderRadius: 3,
                                         px: 1,
                                         fontSize: '25px',
                                         color: value === 2 ? '#9180FC' : '#8F98A9',
@@ -139,7 +142,6 @@ export default function BasicTabs() {
                             label={
                                 <Typography
                                     sx={{
-                                        borderRadius: 3,
                                         px: 1,
                                         fontSize: '25px',
                                         color: value === 3 ? '#9180FC' : '#8F98A9',
@@ -154,16 +156,16 @@ export default function BasicTabs() {
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
-                    Item One
+                    <AnswerBox id={helperData.id} />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    Item Two
+                    <AnswerBox id={helperData.id} />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    Item Three
+                    <AnswerBox id={helperData.id} />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    Item four
+                    <AnswerBox id={helperData.id} />
                 </TabPanel>
             </Box>
         </ThemeProvider>
