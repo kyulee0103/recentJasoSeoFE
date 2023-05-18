@@ -4,54 +4,62 @@ const Spot = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background: #7092fd;
+    background: #ccc0fd;
     margin-left: 3px;
 `
 
 const Total = styled.div`
-    width: 47%;
-    height: 259px;
+    width: 30vw;
+    margin: 20px 25px;
+    height: 347px;
     background: #ffffff;
-    box-shadow: 6px 11px 23px rgba(204, 209, 221, 0.5);
-    padding-top: 33px;
-    padding-left: 36px;
+    box-shadow: 7px 6px 17px -2px #e3ddfc;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease-in;
     &:hover {
-        background: #202123;
-        box-shadow: 9px 12px 23px rgba(204, 209, 221, 0.8);
+        background: linear-gradient(180deg, #b8a7ff 0%, rgba(234, 228, 255, 0) 100%);
+        box-shadow: 7px 6px 17px -6px #dad1ff;
+        transition: all 0.5s ease-in;
         p {
-            color: #f4f5f7;
+            color: #202123;
         }
         & ${Spot} {
-            background: #9980fc;
+            background: #7d5cff;
         }
     }
 `
 const Title = styled.div`
     font-weight: 700;
     font-size: 28px;
-    color: #202123;
+    color: rgba(32, 33, 35, 0.61);
     display: flex;
+    margin-top: 116px;
+    margin-left: 25px;
     p {
         margin-top: 0;
-        margin-bottom: 59px;
+        margin-bottom: 17px;
     }
 `
 const Detail = styled.p`
     font-weight: 500;
     font-size: 22px;
     line-height: 140%;
-    color: #202123;
+    color: rgba(32, 33, 35, 0.61);
+    margin-left: 25px;
 `
 
 type CardProps = {
     title: string
     detail: string
+    id: number
 }
-const Card: React.FC<CardProps> = ({title, detail}) => {
+const Card: React.FC<CardProps> = ({title, detail, id}) => {
+    const clickCard = (id: number) => {
+        console.log(id)
+    }
     return (
-        <Total>
+        <Total onClick={() => clickCard(id)}>
             <Title>
                 <p>{title}</p>
                 <Spot></Spot>
