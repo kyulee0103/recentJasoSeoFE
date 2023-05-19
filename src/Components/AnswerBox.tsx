@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import First from './First'
 import Second from './Second'
 import Third from './Third'
+import {useRecoilState} from 'recoil'
+import {firstHelperState, fourthHelperState, helperState, secondHelperState, thirdHelperState} from '../recoil/helper'
+import Fourth from './Fourth'
 
 const Total = styled.div`
     margin-right: 68px;
@@ -102,10 +105,15 @@ const Btn2 = styled.button`
     border: 0;
     color: #ffffff;
     font-weight: 600;
+    cursor: pointer;
     font-size: 20px;
 `
 
 function AnswerBox({id}: {id: number}) {
+    const [firstData, setFirstData] = useRecoilState(firstHelperState)
+    const [secondData, setSecondData] = useRecoilState(secondHelperState)
+    const [thirdData, setThirdData] = useRecoilState(thirdHelperState)
+    const [fourthData, setFourthData] = useRecoilState(fourthHelperState)
     const [name, setName] = useState('')
     useEffect(() => {
         if (id === 0) {
@@ -117,7 +125,21 @@ function AnswerBox({id}: {id: number}) {
         } else if (id === 3) {
             setName('면접 질문 생성 도우미')
         }
-    }, [])
+    }, [id])
+
+    const onSubmit = (e: React.SyntheticEvent) => {
+        e.preventDefault()
+        if (id === 0) {
+            console.log(firstData)
+            console.log('잘 작동 중임')
+        } else if (id === 1) {
+            console.log(secondData)
+        } else if (id === 2) {
+            console.log(thirdData)
+        } else if (id === 3) {
+            console.log(fourthData)
+        }
+    }
     return (
         <>
             <Total>
@@ -125,21 +147,49 @@ function AnswerBox({id}: {id: number}) {
                     <Top>
                         <p>{name}</p>
                     </Top>
-                    <ContentsBox>
-                        {id === 0 && <First />}
-                        {id === 1 && <Second />}
-                        {(id === 2 || id === 3) && <Third />}
-                    </ContentsBox>
-                    <AnswerFooter>
-                        <Counts>
-                            <Purple>234</Purple>
-                            <Grey> / 1000 (글자수)</Grey>
-                        </Counts>
-                        <Complete>
-                            <Btn1 disabled>작성완료</Btn1>
-                            {/* <Btn2>작성완료</Btn2> */}
-                        </Complete>
-                    </AnswerFooter>
+                    <form autoComplete="off" onSubmit={onSubmit}>
+                        <ContentsBox>
+                            {id === 0 && <First />}
+                            {id === 1 && <Second />}
+                            {id === 3 && <Fourth />}
+                            {id === 2 && <Third />}
+                        </ContentsBox>
+                        <AnswerFooter>
+                            <Counts>
+                                {id === 1 && (
+                                    <>
+                                        <Purple>{secondData.counts}</Purple>
+                                        <Grey> / 1000 (글자수)</Grey>
+                                        <Grey> 공백 포함</Grey>
+                                    </>
+                                )}
+                                {id === 2 && (
+                                    <>
+                                        <Purple>{thirdData.counts}</Purple>
+                                        <Grey> / 1000 (글자수)</Grey>
+                                        <Grey> 공백 포함</Grey>
+                                    </>
+                                )}
+                                {id === 3 && (
+                                    <>
+                                        <Purple>{fourthData.counts}</Purple>
+                                        <Grey> / 1000 (글자수)</Grey>
+                                        <Grey> 공백 포함</Grey>
+                                    </>
+                                )}
+                            </Counts>
+                            <Complete>
+                                {id === 0 &&
+                                    (firstData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                {id === 1 &&
+                                    (secondData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                {id === 2 &&
+                                    (thirdData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                {id === 3 &&
+                                    (fourthData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                            </Complete>
+                        </AnswerFooter>
+                    </form>
                 </MyAnswer>
                 <GptAnswer>
                     <GptTop>

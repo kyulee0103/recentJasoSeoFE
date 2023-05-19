@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import Block from './Block'
+import {useRecoilState} from 'recoil'
+import {firstHelperState} from '../recoil/helper'
 
 const Total = styled.div`
     p {
@@ -52,26 +54,136 @@ const Line2 = styled.div`
 `
 
 function First() {
+    const [helper, setHelper] = useRecoilState(firstHelperState)
+    const onChangeCompany = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHelper((curr) => ({
+            ...curr,
+            company: e.target.value,
+        }))
+        if (
+            helper.company.length > 1 &&
+            helper.experience.length > 1 &&
+            helper.question.length > 1 &&
+            helper.work.length > 1
+        ) {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: true,
+            }))
+        } else {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
+        }
+    }
+    const onChangeWork = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHelper((curr) => ({
+            ...curr,
+            work: e.target.value,
+        }))
+        if (
+            helper.company.length > 1 &&
+            helper.experience.length > 1 &&
+            helper.question.length > 1 &&
+            helper.work.length > 1
+        ) {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: true,
+            }))
+        } else {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
+        }
+    }
+
+    const onChangeQuestion = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHelper((curr) => ({
+            ...curr,
+            question: e.target.value,
+        }))
+        if (
+            helper.company.length > 1 &&
+            helper.experience.length > 1 &&
+            helper.question.length > 1 &&
+            helper.work.length > 1
+        ) {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: true,
+            }))
+        } else {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
+        }
+    }
+    const onChangeExperience = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setHelper((curr) => ({
+            ...curr,
+            experience: e.target.value,
+        }))
+        if (
+            helper.company.length > 1 &&
+            helper.experience.length > 1 &&
+            helper.question.length > 1 &&
+            helper.work.length > 1
+        ) {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: true,
+            }))
+        } else {
+            setHelper((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
+        }
+    }
     return (
         <Total>
             <Line>
                 <p>지원 회사</p>
-                <input placeholder="지원하는 회사명을 입력해주세요. (ex. 현대자동차)" />
+                <input
+                    value={helper.company}
+                    onChange={onChangeCompany}
+                    placeholder="지원하는 회사명을 입력해주세요. (ex. 현대자동차)"
+                    required
+                />
             </Line>
             <Block />
             <Line>
                 <p>직무</p>
-                <input placeholder="지원하는 직무 및 직군을 입력해주세요. (ex. 마케터)" />
+                <input
+                    value={helper.work}
+                    onChange={onChangeWork}
+                    placeholder="지원하는 직무 및 직군을 입력해주세요. (ex. 마케터)"
+                    required
+                />
             </Line>
             <Block />
             <Line>
                 <p>질문</p>
-                <input placeholder="자기소개서 문항을 입력해주세요. (ex. 협업 경험에 대해 서술하시오.)" />
+                <input
+                    value={helper.question}
+                    onChange={onChangeQuestion}
+                    placeholder="자기소개서 문항을 입력해주세요. (ex. 협업 경험에 대해 서술하시오.)"
+                    required
+                />
             </Line>
             <Block />
             <Line2>
                 <p>활동 경험</p>
-                <textarea placeholder="활동 경험을 작성해주세요.(ex. ABC 프로젝트 마케터로 유저 유입 30% 증가) " />
+                <textarea
+                    value={helper.experience}
+                    onChange={onChangeExperience}
+                    placeholder="활동 경험을 작성해주세요.(ex. ABC 프로젝트 마케터로 유저 유입 30% 증가) "
+                    required
+                />
             </Line2>
         </Total>
     )

@@ -68,6 +68,7 @@ const Card: React.FC<CardProps> = ({title, detail, id}) => {
             name: title,
             isFilled: false,
         }))
+        localStorage.setItem('page', helperData.id.toString())
         navigate('/helper')
     }
     return (

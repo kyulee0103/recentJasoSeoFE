@@ -14,14 +14,16 @@ const White = styled.div`
     padding-top: 25px;
 `
 
+const Total = styled.div``
+
 function Helper() {
     return (
-        <>
+        <Total>
             <Header />
             <White>
                 <BasicTabs />
             </White>
-        </>
+        </Total>
     )
 }
 

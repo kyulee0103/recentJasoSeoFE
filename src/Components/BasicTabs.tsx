@@ -72,14 +72,16 @@ const theme = createTheme({
 })
 export default function BasicTabs() {
     const [helperData, setHelperData] = useRecoilState(helperState)
-    const [value, setValue] = React.useState(helperData.id)
+    const storedValue = localStorage.getItem('page')
+    const initialValue = storedValue !== null ? parseInt(storedValue) : 0
+    const [value, setValue] = React.useState(initialValue)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue)
         setHelperData({
             id: newValue,
-            isFilled: false,
         })
+        localStorage.setItem('page', newValue.toString())
     }
 
     return (
@@ -156,16 +158,16 @@ export default function BasicTabs() {
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
-                    <AnswerBox id={helperData.id} />
+                    {value === 0 && <AnswerBox id={helperData.id} />}
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <AnswerBox id={helperData.id} />
+                    {value === 1 && <AnswerBox id={helperData.id} />}
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <AnswerBox id={helperData.id} />
+                    {value === 2 && <AnswerBox id={helperData.id} />}
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    <AnswerBox id={helperData.id} />
+                    {value === 3 && <AnswerBox id={helperData.id} />}
                 </TabPanel>
             </Box>
         </ThemeProvider>

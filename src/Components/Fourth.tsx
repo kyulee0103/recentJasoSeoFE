@@ -1,6 +1,6 @@
 import {useRecoilState} from 'recoil'
 import styled from 'styled-components'
-import {thirdHelperState} from '../recoil/helper'
+import {fourthHelperState} from '../recoil/helper'
 
 const Total = styled.div`
     textarea {
@@ -26,21 +26,21 @@ const Line2 = styled.div`
     display: flex;
 `
 
-function Third() {
-    const [thirdHelper, setThirdHelper] = useRecoilState(thirdHelperState)
+function Fourth() {
+    const [fourthHelper, setFourthHelper] = useRecoilState(fourthHelperState)
     const onChangeContents = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setThirdHelper((curr) => ({
+        setFourthHelper((curr) => ({
             ...curr,
             contents: e.target.value,
             counts: e.target.value.length,
         }))
-        if (thirdHelper.counts > 1) {
-            setThirdHelper((curr) => ({
+        if (fourthHelper.counts > 1) {
+            setFourthHelper((curr) => ({
                 ...curr,
                 isFilled: true,
             }))
         } else {
-            setThirdHelper((curr) => ({
+            setFourthHelper((curr) => ({
                 ...curr,
                 isFilled: false,
             }))
@@ -50,14 +50,13 @@ function Third() {
         <Total>
             <Line2>
                 <textarea
-                    value={thirdHelper.contents}
+                    value={fourthHelper.contents}
                     onChange={onChangeContents}
                     placeholder="자기소개서 내용을 입력해주세요. "
-                    required
                 />
             </Line2>
         </Total>
     )
 }
 
-export default Third
+export default Fourth
