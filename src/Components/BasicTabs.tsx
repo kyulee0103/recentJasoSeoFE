@@ -78,9 +78,10 @@ export default function BasicTabs() {
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue)
-        setHelperData({
+        setHelperData((prevHelperData) => ({
+            ...prevHelperData,
             id: newValue,
-        })
+        }))
         localStorage.setItem('page', newValue.toString())
     }
 

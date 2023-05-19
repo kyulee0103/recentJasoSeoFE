@@ -4,10 +4,13 @@ type IHelperTypes = {
     id: number
 }
 
+const storedValue = localStorage.getItem('page')
+const initialValue = storedValue !== null ? parseInt(storedValue) : 0
+
 export const helperState = atom<IHelperTypes>({
     key: 'helper',
     default: {
-        id: 0,
+        id: initialValue,
     },
 })
 
