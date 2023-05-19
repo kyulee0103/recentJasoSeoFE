@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import First from './First'
 import Second from './Second'
 import Third from './Third'
-import {useRecoilState} from 'recoil'
-import {firstHelperState, fourthHelperState, helperState, secondHelperState, thirdHelperState} from '../recoil/helper'
+import {useRecoilValue} from 'recoil'
+import {firstHelperState, fourthHelperState, secondHelperState, thirdHelperState} from '../recoil/helper'
 import Fourth from './Fourth'
 
 const Total = styled.div`
@@ -17,7 +17,6 @@ const Total = styled.div`
 const MyAnswer = styled.div`
     width: 63%;
     height: 100%;
-    /* background-color: #fd8b8b; */
 `
 const GptAnswer = styled.div`
     width: 37%;
@@ -110,10 +109,10 @@ const Btn2 = styled.button`
 `
 
 function AnswerBox({id}: {id: number}) {
-    const [firstData, setFirstData] = useRecoilState(firstHelperState)
-    const [secondData, setSecondData] = useRecoilState(secondHelperState)
-    const [thirdData, setThirdData] = useRecoilState(thirdHelperState)
-    const [fourthData, setFourthData] = useRecoilState(fourthHelperState)
+    const firstData = useRecoilValue(firstHelperState)
+    const secondData = useRecoilValue(secondHelperState)
+    const thirdData = useRecoilValue(thirdHelperState)
+    const fourthData = useRecoilValue(fourthHelperState)
     const [name, setName] = useState('')
     useEffect(() => {
         if (id === 0) {

@@ -40,7 +40,7 @@ function Header() {
                             navigate('/')
                         }}
                     >
-                        <img src={Logo} />
+                        <img src={Logo} alt="logo" />
                     </ImgBox>
                 </Main>
                 <p>반갑습니다, 회원님!</p>

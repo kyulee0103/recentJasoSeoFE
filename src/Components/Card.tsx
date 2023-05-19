@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom'
-import {useRecoilState, useSetRecoilState} from 'recoil'
+import {useSetRecoilState} from 'recoil'
 import {styled} from 'styled-components'
 import {helperState} from '../recoil/helper'
 
@@ -59,7 +59,7 @@ type CardProps = {
 }
 const Card: React.FC<CardProps> = ({title, detail, id}) => {
     const navigate = useNavigate()
-    const [helperData, setHelperData] = useRecoilState(helperState)
+    const setHelperData = useSetRecoilState(helperState)
     const clickCard = (id: number, title: string) => {
         console.log(id)
         setHelperData((currVal) => ({

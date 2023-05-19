@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 import Header from '../Components/Header'
 import BasicTabs from '../Components/BasicTabs'
-import {useLocation} from 'react-router-dom'
-import {useRecoilState} from 'recoil'
-import {helperState} from '../recoil/helper'
 
 const White = styled.div`
     width: 100%;
