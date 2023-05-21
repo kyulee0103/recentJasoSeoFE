@@ -9,12 +9,12 @@ const Total = styled.div`
         background-color: #f4f5f7;
         width: 100%;
         margin-top: 15px;
-        height: 50vh;
-        font-size: 22px;
+        height: 41vh;
+        font-size: 18px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;
-            font-size: 22px;
+            font-size: 18px;
         }
         &:focus {
             outline: none;

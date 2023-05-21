@@ -38,7 +38,7 @@ const GptContents = styled.div`
         margin: 0;
         color: #202123;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 150%;
     }
     padding: 22px;
@@ -78,12 +78,12 @@ const Counts = styled.div``
 const Purple = styled.span`
     color: #9980fc;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
 `
 const Grey = styled.span`
     color: #8a919d;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
 `
 const Complete = styled.div``
 const Btn1 = styled.button`
@@ -94,7 +94,7 @@ const Btn1 = styled.button`
     border: 0;
     color: #ffffff;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
 `
 
 const Btn2 = styled.button`
@@ -106,7 +106,7 @@ const Btn2 = styled.button`
     color: #ffffff;
     font-weight: 600;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
 `
 
 function AnswerBox({id}: {id: number}) {

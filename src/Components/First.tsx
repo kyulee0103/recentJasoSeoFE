@@ -7,7 +7,7 @@ const Total = styled.div`
     p {
         width: 150px;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 18px;
         color: #202123;
     }
     input {
@@ -15,11 +15,11 @@ const Total = styled.div`
         width: 90%;
         border: 0;
         background-color: #f4f5f7;
-        font-size: 22px;
+        font-size: 18px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;
-            font-size: 22px;
+            font-size: 16px;
         }
         &:focus {
             outline: none;
@@ -32,11 +32,11 @@ const Total = styled.div`
         width: 90%;
         margin-top: 15px;
         /* height: 255px; */
-        font-size: 22px;
+        font-size: 18px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;
-            font-size: 22px;
+            font-size: 16px;
         }
         &:focus {
             outline: none;
