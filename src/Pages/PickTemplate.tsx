@@ -5,7 +5,7 @@ import {styled} from 'styled-components'
 const Middle = styled.div`
     span {
         color: #7154e6;
-        font-size: 36px;
+        font-size: 30px;
         line-height: 150%;
     }
     width: 32%;

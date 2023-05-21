@@ -11,7 +11,7 @@ const Total = styled.div`
     p {
         color: #202123;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         position: absolute;
         right: 62px;
         margin-right: 18px;

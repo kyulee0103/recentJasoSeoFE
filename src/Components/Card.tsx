@@ -13,8 +13,8 @@ const Spot = styled.div`
 
 const Total = styled.div`
     margin: 15px;
-    width: 501px;
-    height: 337px;
+    width: 30vw;
+    height: 300px;
     background: #ffffff;
     box-shadow: 7px 6px 17px -2px #e3ddfc;
     border-radius: 10px;
@@ -34,10 +34,10 @@ const Total = styled.div`
 `
 const Title = styled.div`
     font-weight: 700;
-    font-size: 26px;
+    font-size: 24px;
     color: rgba(32, 33, 35, 0.61);
     display: flex;
-    margin-top: 116px;
+    margin-top: 30px;
     margin-left: 25px;
     p {
         margin-top: 0;
@@ -46,7 +46,7 @@ const Title = styled.div`
 `
 const Detail = styled.p`
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 140%;
     color: rgba(32, 33, 35, 0.61);
     margin-left: 25px;
