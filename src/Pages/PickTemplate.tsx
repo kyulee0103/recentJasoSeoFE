@@ -30,7 +30,7 @@ const Cards = styled.div`
 
 const Blank = styled.div`
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: white;
     text-align: center;
     border-bottom: 5px solid #9980fc;

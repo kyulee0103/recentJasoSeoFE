@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Block from './Block'
 import {useRecoilState} from 'recoil'
 import {firstHelperState} from '../recoil/helper'
+import {useEffect} from 'react'
 
 const Total = styled.div`
     p {
@@ -31,7 +32,6 @@ const Total = styled.div`
         background-color: #f4f5f7;
         width: 90%;
         margin-top: 15px;
-        /* height: 255px; */
         font-size: 18px;
         &::placeholder {
             color: #8f98a9;
@@ -60,44 +60,12 @@ function First() {
             ...curr,
             company: e.target.value,
         }))
-        if (
-            helper.company.length > 1 &&
-            helper.experience.length > 1 &&
-            helper.question.length > 1 &&
-            helper.work.length > 1
-        ) {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
     const onChangeWork = (e: React.ChangeEvent<HTMLInputElement>) => {
         setHelper((curr) => ({
             ...curr,
             work: e.target.value,
         }))
-        if (
-            helper.company.length > 1 &&
-            helper.experience.length > 1 &&
-            helper.question.length > 1 &&
-            helper.work.length > 1
-        ) {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
 
     const onChangeQuestion = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,45 +73,32 @@ function First() {
             ...curr,
             question: e.target.value,
         }))
-        if (
-            helper.company.length > 1 &&
-            helper.experience.length > 1 &&
-            helper.question.length > 1 &&
-            helper.work.length > 1
-        ) {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
     const onChangeExperience = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setHelper((curr) => ({
             ...curr,
             experience: e.target.value,
         }))
-        if (
-            helper.company.length > 1 &&
-            helper.experience.length > 1 &&
-            helper.question.length > 1 &&
-            helper.work.length > 1
-        ) {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
+    useEffect(() => {
+        setHelper((curr) => {
+            const isFilled =
+                curr.company.length > 1 &&
+                curr.experience.length > 1 &&
+                curr.question.length > 1 &&
+                curr.work.length > 1
+
+            if (curr.isFilled !== isFilled) {
+                return {
+                    ...curr,
+                    isFilled,
+                }
+            }
+
+            return curr
+        })
+    }, [helper])
+
     return (
         <Total>
             <Line>

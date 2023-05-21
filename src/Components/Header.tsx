@@ -17,8 +17,8 @@ const Total = styled.div`
         margin-right: 18px;
     }
     img {
-        width: 163px;
-        height: 37px;
+        width: 134px;
+        height: 30px;
     }
 `
 

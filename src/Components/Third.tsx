@@ -1,6 +1,7 @@
 import {useRecoilState} from 'recoil'
 import styled from 'styled-components'
 import {thirdHelperState} from '../recoil/helper'
+import {useEffect} from 'react'
 
 const Total = styled.div`
     textarea {
@@ -34,18 +35,20 @@ function Third() {
             contents: e.target.value,
             counts: e.target.value.length,
         }))
-        if (thirdHelper.counts > 1) {
-            setThirdHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setThirdHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
+
+    useEffect(() => {
+        setThirdHelper((curr) => {
+            const isFilled = curr.contents.length > 1
+            if (curr.isFilled !== isFilled) {
+                return {
+                    ...curr,
+                    isFilled,
+                }
+            }
+            return curr
+        })
+    }, [thirdHelper])
     return (
         <Total>
             <Line2>

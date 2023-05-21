@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Block from './Block'
 import {useRecoilState} from 'recoil'
 import {secondHelperState} from '../recoil/helper'
+import {useEffect} from 'react'
 
 const Total = styled.div`
     input {
@@ -55,17 +56,6 @@ function Second() {
             ...curr,
             title: e.target.value,
         }))
-        if (secondHelper.title.length > 1 && secondHelper.contents.length > 1) {
-            setSecondHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setSecondHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
     const onChangeContents = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setSecondHelper((curr) => ({
@@ -73,18 +63,21 @@ function Second() {
             contents: e.target.value,
             counts: e.target.value.length,
         }))
-        if (secondHelper.title.length > 1 && secondHelper.contents.length > 1) {
-            setSecondHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setSecondHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
+
+    useEffect(() => {
+        setSecondHelper((curr) => {
+            const isFilled = curr.contents.length > 1 && curr.title.length > 1
+
+            if (curr.isFilled !== isFilled) {
+                return {
+                    ...curr,
+                    isFilled,
+                }
+            }
+            return curr
+        })
+    }, [secondHelper])
     return (
         <Total>
             <Line>

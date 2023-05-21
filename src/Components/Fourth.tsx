@@ -1,6 +1,7 @@
 import {useRecoilState} from 'recoil'
 import styled from 'styled-components'
 import {fourthHelperState} from '../recoil/helper'
+import {useEffect} from 'react'
 
 const Total = styled.div`
     textarea {
@@ -34,18 +35,20 @@ function Fourth() {
             contents: e.target.value,
             counts: e.target.value.length,
         }))
-        if (fourthHelper.counts > 1) {
-            setFourthHelper((curr) => ({
-                ...curr,
-                isFilled: true,
-            }))
-        } else {
-            setFourthHelper((curr) => ({
-                ...curr,
-                isFilled: false,
-            }))
-        }
     }
+
+    useEffect(() => {
+        setFourthHelper((curr) => {
+            const isFilled = curr.contents.length > 1
+            if (curr.isFilled !== isFilled) {
+                return {
+                    ...curr,
+                    isFilled,
+                }
+            }
+            return curr
+        })
+    }, [fourthHelper])
     return (
         <Total>
             <Line2>
