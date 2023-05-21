@@ -26,7 +26,7 @@ function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Box sx={{p: 4, paddingLeft: '0px', paddingRight: '68px', marginTop: '40px'}}>{children}</Box>
+                <Box sx={{p: 4, paddingLeft: '0px', paddingRight: '68px', marginTop: '0px'}}>{children}</Box>
             )}
         </div>
     )
@@ -101,7 +101,7 @@ export default function BasicTabs() {
                                 <Typography
                                     sx={{
                                         px: 1,
-                                        fontSize: '25px',
+                                        fontSize: '20px',
                                         color: value === 0 ? '#9180FC' : '#8F98A9',
                                         fontWeight: value === 0 ? 700 : 500,
                                     }}
@@ -116,7 +116,7 @@ export default function BasicTabs() {
                                 <Typography
                                     sx={{
                                         px: 1,
-                                        fontSize: '25px',
+                                        fontSize: '20px',
                                         color: value === 1 ? '#9180FC' : '#8F98A9',
                                         fontWeight: value === 1 ? 700 : 500,
                                     }}
@@ -131,7 +131,7 @@ export default function BasicTabs() {
                                 <Typography
                                     sx={{
                                         px: 1,
-                                        fontSize: '25px',
+                                        fontSize: '20px',
                                         color: value === 2 ? '#9180FC' : '#8F98A9',
                                         fontWeight: value === 2 ? 700 : 500,
                                     }}
@@ -146,7 +146,7 @@ export default function BasicTabs() {
                                 <Typography
                                     sx={{
                                         px: 1,
-                                        fontSize: '25px',
+                                        fontSize: '20px',
                                         color: value === 3 ? '#9180FC' : '#8F98A9',
                                         fontWeight: value === 3 ? 700 : 500,
                                     }}

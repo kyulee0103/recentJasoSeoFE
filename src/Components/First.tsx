@@ -31,7 +31,7 @@ const Total = styled.div`
         background-color: #f4f5f7;
         width: 90%;
         margin-top: 15px;
-        height: 255px;
+        /* height: 255px; */
         font-size: 22px;
         &::placeholder {
             color: #8f98a9;

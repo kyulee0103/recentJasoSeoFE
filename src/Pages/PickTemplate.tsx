@@ -12,7 +12,7 @@ const Middle = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 74px;
+    margin-bottom: 34px;
 `
 
 const Bold = styled.span`
@@ -30,7 +30,7 @@ const Cards = styled.div`
 
 const Blank = styled.div`
     width: 100%;
-    height: 70px;
+    height: 40px;
     background-color: white;
     text-align: center;
     border-bottom: 5px solid #9980fc;
@@ -40,7 +40,7 @@ const CardBox = styled.div``
 const Contents = styled.div`
     display: flex;
     align-items: center;
-    height: calc(90vh - 80px);
+    height: calc(90vh - 90px);
 `
 
 const Words = styled.div``

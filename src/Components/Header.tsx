@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 
 const Total = styled.div`
     background-color: #ffffff;
-    padding: 50px 62px 0px 62px;
+    padding: 40px 62px 0px 62px;
     display: flex;
     align-items: center;
     justify-content: space-between;

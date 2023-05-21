@@ -14,12 +14,12 @@ const Spot = styled.div`
 const Total = styled.div`
     margin: 15px;
     width: 30vw;
-    height: 300px;
+    height: 230px;
     background: #ffffff;
     box-shadow: 7px 6px 17px -2px #e3ddfc;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in-out;
     &:hover {
         background: linear-gradient(180deg, #b8a7ff 0%, rgba(234, 228, 255, 0) 100%);
         box-shadow: 7px 6px 17px -6px #dad1ff;
@@ -37,7 +37,7 @@ const Title = styled.div`
     font-size: 24px;
     color: rgba(32, 33, 35, 0.61);
     display: flex;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 25px;
     p {
         margin-top: 0;

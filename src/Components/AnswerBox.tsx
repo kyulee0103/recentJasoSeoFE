@@ -16,11 +16,11 @@ const Total = styled.div`
 `
 const MyAnswer = styled.div`
     width: 63%;
-    height: 7995px;
+    height: 70vh;
 `
 const GptAnswer = styled.div`
     width: 37%;
-    height: 7995px;
+    height: 70vh;
 `
 const GptTop = styled.div`
     height: 22px;
@@ -35,6 +35,7 @@ const GptTop = styled.div`
 `
 const GptContents = styled.div`
     p {
+        margin: 0;
         color: #202123;
         font-weight: 500;
         font-size: 20px;
@@ -43,7 +44,7 @@ const GptContents = styled.div`
     padding: 22px;
     border-left: 2px solid rgba(143, 152, 169, 0.48);
     flex: 1;
-    height: calc(100% - 110px);
+    height: calc(70vh - 110px);
     overflow: scroll;
 `
 
@@ -62,7 +63,7 @@ const ContentsBox = styled.div`
     margin: 0px 22px;
     flex: 1;
     background-color: #f4f5f7;
-    height: calc(100% - 198px);
+    height: calc(70vh - 198px);
     padding: 22px;
 `
 
