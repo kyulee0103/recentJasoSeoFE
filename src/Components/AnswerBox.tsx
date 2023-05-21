@@ -16,11 +16,11 @@ const Total = styled.div`
 `
 const MyAnswer = styled.div`
     width: 63%;
-    height: 100%;
+    height: 7995px;
 `
 const GptAnswer = styled.div`
     width: 37%;
-    height: 100%;
+    height: 7995px;
 `
 const GptTop = styled.div`
     height: 22px;
