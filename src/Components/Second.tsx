@@ -77,7 +77,7 @@ function Second() {
             }
             return curr
         })
-    }, [secondHelper])
+    }, [secondHelper, setSecondHelper])
     return (
         <Total>
             <Line>

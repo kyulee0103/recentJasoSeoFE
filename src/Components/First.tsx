@@ -97,7 +97,7 @@ function First() {
 
             return curr
         })
-    }, [helper])
+    }, [helper, setHelper])
 
     return (
         <Total>

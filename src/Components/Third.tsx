@@ -48,7 +48,7 @@ function Third() {
             }
             return curr
         })
-    }, [thirdHelper])
+    }, [thirdHelper, setThirdHelper])
     return (
         <Total>
             <Line2>

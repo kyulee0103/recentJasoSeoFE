@@ -48,7 +48,7 @@ function Fourth() {
             }
             return curr
         })
-    }, [fourthHelper])
+    }, [fourthHelper, setFourthHelper])
     return (
         <Total>
             <Line2>
