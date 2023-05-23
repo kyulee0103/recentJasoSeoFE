@@ -8,8 +8,13 @@ const Total = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 `
 
 const Title = styled.p`
