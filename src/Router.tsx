@@ -3,22 +3,36 @@ import App from './App'
 import PickTemplate from './Pages/PickTemplate'
 import Helper from './Pages/Helper'
 import Error from './Pages/Error'
+import {isMobile} from 'react-device-detect'
+import Mobile from './Pages/Mobile'
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <App />,
-        children: [
-            {
-                path: '',
-                element: <PickTemplate />,
-            },
-            {
-                path: 'helper',
-                element: <Helper />,
-            },
-        ],
-        errorElement: <Error />,
-    },
+    isMobile
+        ? {
+              path: '/',
+              element: <App />,
+              children: [
+                  {
+                      path: '',
+                      element: <Mobile />,
+                  },
+              ],
+              errorElement: <Error />,
+          }
+        : {
+              path: '/',
+              element: <App />,
+              children: [
+                  {
+                      path: '',
+                      element: <PickTemplate />,
+                  },
+                  {
+                      path: 'helper',
+                      element: <Helper />,
+                  },
+              ],
+              errorElement: <Error />,
+          },
 ])
 export default router
