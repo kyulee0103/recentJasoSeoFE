@@ -73,3 +73,39 @@ export const fourthHelperState = atom<IThirdHelperTypes>({
         isFilled: false,
     },
 })
+
+type IAnswerTypes = {
+    answer: string
+    waiting: boolean
+}
+
+export const FirstAnswerState = atom<IAnswerTypes>({
+    key: 'firstAnswer',
+    default: {
+        answer: '',
+        waiting: false,
+    },
+})
+
+export const SecondAnswerState = atom<IAnswerTypes>({
+    key: 'secondAnswer',
+    default: {
+        answer: '',
+        waiting: false,
+    },
+})
+
+export const ThirdAnswerState = atom<IAnswerTypes>({
+    key: 'thirdAnswer',
+    default: {
+        answer: '',
+        waiting: false,
+    },
+})
+export const FourthAnswerState = atom<IAnswerTypes>({
+    key: 'fourthAnswer',
+    default: {
+        answer: '',
+        waiting: false,
+    },
+})
