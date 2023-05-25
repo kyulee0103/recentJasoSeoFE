@@ -48,13 +48,6 @@ const GptTop = styled.div`
     }
 `
 const GptContents = styled.div`
-    p {
-        margin: 0;
-        color: #202123;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 150%;
-    }
     padding: 22px;
     border-left: 2px solid rgba(143, 152, 169, 0.48);
     flex: 1;
@@ -169,6 +162,11 @@ function AnswerBox({id}: {id: number}) {
                 })
                 .catch(function (err) {
                     console.log(err)
+                    setFirstAnswer((curr) => ({
+                        ...curr,
+                        answer: '',
+                        error: true,
+                    }))
                 })
         } else if (id === 1) {
             setSecondAnswer((curr) => ({
@@ -192,6 +190,11 @@ function AnswerBox({id}: {id: number}) {
                 })
                 .catch(function (err) {
                     console.log(err)
+                    setSecondAnswer((curr) => ({
+                        ...curr,
+                        answer: '',
+                        error: true,
+                    }))
                 })
         } else if (id === 2) {
             setThirdAnswer((curr) => ({
@@ -215,6 +218,11 @@ function AnswerBox({id}: {id: number}) {
                 })
                 .catch(function (err) {
                     console.log(err)
+                    setThirdAnswer((curr) => ({
+                        ...curr,
+                        answer: '',
+                        error: true,
+                    }))
                 })
         } else if (id === 3) {
             setFourthAnswer((curr) => ({
@@ -238,6 +246,11 @@ function AnswerBox({id}: {id: number}) {
                 })
                 .catch(function (err) {
                     console.log(err)
+                    setFourthAnswer((curr) => ({
+                        ...curr,
+                        answer: '',
+                        error: true,
+                    }))
                 })
         }
     }
