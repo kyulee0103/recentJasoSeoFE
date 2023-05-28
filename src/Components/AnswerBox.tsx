@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import First from './First'
 import Second from './Second'
 import Third from './Third'
-import {useRecoilValue, useSetRecoilState} from 'recoil'
+import {useRecoilState, useRecoilValue} from 'recoil'
 import {
     FirstAnswerState,
     FourthAnswerState,
@@ -20,6 +20,8 @@ import FirstAnswer from './answers/FirstAnswer'
 import SecondAnswer from './answers/SecondAnswer'
 import FourthAnswer from './answers/FourthAnswer'
 import ThirdAnswer from './answers/ThirdAnswer'
+import Loading from '../assets/123243-white-loading-spinner.json'
+import Lottie from 'lottie-react'
 
 const Total = styled.div`
     margin-right: 68px;
@@ -38,6 +40,8 @@ const GptAnswer = styled.div`
 `
 const GptTop = styled.div`
     height: 22px;
+    display: flex;
+    align-items: center;
     padding: 22px;
     background: #9980fc;
     p {
@@ -45,6 +49,7 @@ const GptTop = styled.div`
         color: #ffffff;
         font-weight: 700;
         font-size: 22px;
+        margin-right: 10px;
     }
 `
 const GptContents = styled.div`
@@ -121,10 +126,10 @@ function AnswerBox({id}: {id: number}) {
     const secondData = useRecoilValue(secondHelperState)
     const thirdData = useRecoilValue(thirdHelperState)
     const fourthData = useRecoilValue(fourthHelperState)
-    const setFirstAnswer = useSetRecoilState(FirstAnswerState)
-    const setSecondAnswer = useSetRecoilState(SecondAnswerState)
-    const setThirdAnswer = useSetRecoilState(ThirdAnswerState)
-    const setFourthAnswer = useSetRecoilState(FourthAnswerState)
+    const [firstAnswer, setFirstAnswer] = useRecoilState(FirstAnswerState)
+    const [secondAnswer, setSecondAnswer] = useRecoilState(SecondAnswerState)
+    const [thirdAnswer, setThirdAnswer] = useRecoilState(ThirdAnswerState)
+    const [fourthAnswer, setFourthAnswer] = useRecoilState(FourthAnswerState)
     const [name, setName] = useState('')
     useEffect(() => {
         if (id === 0) {
@@ -144,6 +149,7 @@ function AnswerBox({id}: {id: number}) {
             setFirstAnswer((curr) => ({
                 ...curr,
                 waiting: true,
+                answer: '',
             }))
             axios({
                 method: 'post',
@@ -172,13 +178,14 @@ function AnswerBox({id}: {id: number}) {
             setSecondAnswer((curr) => ({
                 ...curr,
                 waiting: true,
+                answer: '',
             }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
                 data: {
                     type: 1,
-                    content: [secondData.title, secondData.contents],
+                    content: [secondData.work, secondData.question, secondData.contents],
                 },
             })
                 .then(function (response) {
@@ -200,12 +207,13 @@ function AnswerBox({id}: {id: number}) {
             setThirdAnswer((curr) => ({
                 ...curr,
                 waiting: true,
+                answer: '',
             }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
                 data: {
-                    type: 1,
+                    type: 2,
                     content: [thirdData.contents],
                 },
             })
@@ -228,12 +236,13 @@ function AnswerBox({id}: {id: number}) {
             setFourthAnswer((curr) => ({
                 ...curr,
                 waiting: true,
+                answer: '',
             }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
                 data: {
-                    type: 1,
+                    type: 3,
                     content: [fourthData.contents],
                 },
             })
@@ -265,8 +274,8 @@ function AnswerBox({id}: {id: number}) {
                         <ContentsBox>
                             {id === 0 && <First />}
                             {id === 1 && <Second />}
-                            {id === 3 && <Fourth />}
                             {id === 2 && <Third />}
+                            {id === 3 && <Fourth />}
                         </ContentsBox>
                         <AnswerFooter>
                             <Counts>
@@ -307,7 +316,43 @@ function AnswerBox({id}: {id: number}) {
                 </MyAnswer>
                 <GptAnswer>
                     <GptTop>
-                        <p>요즘 AI 도우미 답변</p>
+                        <p>요즘자소서 답변</p>
+                        {id === 0 && firstAnswer.waiting && (
+                            <Lottie
+                                animationData={Loading}
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                }}
+                            />
+                        )}
+                        {id === 1 && secondAnswer.waiting && (
+                            <Lottie
+                                animationData={Loading}
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                }}
+                            />
+                        )}
+                        {id === 2 && thirdAnswer.waiting && (
+                            <Lottie
+                                animationData={Loading}
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                }}
+                            />
+                        )}
+                        {id === 3 && fourthAnswer.waiting && (
+                            <Lottie
+                                animationData={Loading}
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                }}
+                            />
+                        )}
                     </GptTop>
                     <GptContents>
                         {id === 0 && <FirstAnswer />}

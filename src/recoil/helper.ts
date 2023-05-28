@@ -34,7 +34,8 @@ export const firstHelperState = atom<IFirstHelperTypes>({
 })
 
 type ISecondHelperTypes = {
-    title: string
+    work: string
+    question: string
     contents: string
     isFilled: boolean
     counts: number
@@ -43,7 +44,8 @@ type ISecondHelperTypes = {
 export const secondHelperState = atom<ISecondHelperTypes>({
     key: 'secondHelper',
     default: {
-        title: '',
+        work: '',
+        question: '',
         contents: '',
         counts: 0,
         isFilled: false,
