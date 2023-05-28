@@ -34,7 +34,7 @@ const Total = styled.div`
 `
 const Title = styled.div`
     font-weight: 700;
-    font-size: 240px;
+    font-size: 20px;
     color: rgba(32, 33, 35, 0.61);
     display: flex;
     margin-top: 50px;
