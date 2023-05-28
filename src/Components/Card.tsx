@@ -61,7 +61,6 @@ const Card: React.FC<CardProps> = ({title, detail, id}) => {
     const navigate = useNavigate()
     const setHelperData = useSetRecoilState(helperState)
     const clickCard = (id: number, title: string) => {
-        console.log(id)
         setHelperData((currVal) => ({
             ...currVal,
             id,

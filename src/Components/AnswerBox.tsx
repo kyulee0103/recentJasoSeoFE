@@ -89,12 +89,12 @@ const Counts = styled.div``
 const Purple = styled.span`
     color: #9980fc;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 `
 const Grey = styled.span`
     color: #8a919d;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
 `
 const Complete = styled.div``
 const Btn1 = styled.button`
@@ -166,7 +166,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                 })
                 .catch(function (err) {
-                    console.log(err)
+                    // console.log(err)
                     setFirstAnswer((curr) => ({
                         ...curr,
                         answer: '',
@@ -195,7 +195,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                 })
                 .catch(function (err) {
-                    console.log(err)
+                    // console.log(err)
                     setSecondAnswer((curr) => ({
                         ...curr,
                         answer: '',
@@ -224,7 +224,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                 })
                 .catch(function (err) {
-                    console.log(err)
+                    // console.log(err)
                     setThirdAnswer((curr) => ({
                         ...curr,
                         answer: '',
@@ -253,7 +253,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                 })
                 .catch(function (err) {
-                    console.log(err)
+                    // console.log(err)
                     setFourthAnswer((curr) => ({
                         ...curr,
                         answer: '',

@@ -7,7 +7,6 @@ const White = styled.div`
     background-color: white;
     padding-left: 68px;
     padding-right: 68px;
-    padding-top: 25px;
 `
 
 const Total = styled.div``
