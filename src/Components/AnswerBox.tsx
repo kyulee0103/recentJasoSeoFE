@@ -24,18 +24,18 @@ import Loading from '../assets/123243-white-loading-spinner.json'
 import Lottie from 'lottie-react'
 
 const Total = styled.div`
-    height: 70vh;
+    height: 75vh;
     background-color: #ffffff;
     box-shadow: 6px 11px 23px rgba(204, 209, 221, 0.5);
     display: flex;
 `
 const MyAnswer = styled.div`
     width: 63%;
-    height: 70vh;
+    height: 75vh;
 `
 const GptAnswer = styled.div`
     width: 37%;
-    height: 70vh;
+    height: 75vh;
 `
 const GptTop = styled.div`
     height: 22px;
@@ -55,7 +55,7 @@ const GptContents = styled.div`
     padding: 22px;
     border-left: 2px solid rgba(143, 152, 169, 0.48);
     flex: 1;
-    height: calc(70vh - 110px);
+    height: calc(75vh - 110px);
     overflow: scroll;
 `
 
@@ -74,13 +74,13 @@ const ContentsBox = styled.div`
     margin: 0px 22px;
     flex: 1;
     background-color: #f4f5f7;
-    height: calc(70vh - 198px);
+    height: calc(75vh - 168px);
     padding: 10px 20px;
 `
 
 const AnswerFooter = styled.div`
     display: flex;
-    margin: 22px;
+    margin: 22px 22px 0px 22px;
     justify-content: space-between;
     align-items: center;
 `

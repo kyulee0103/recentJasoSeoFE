@@ -10,7 +10,7 @@ const Total = styled.div`
         background-color: #f4f5f7;
         width: 100%;
         margin-top: 8px;
-        height: 41vh;
+        height: 50vh;
         font-size: 16px;
         &::placeholder {
             color: #8f98a9;

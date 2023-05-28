@@ -28,6 +28,7 @@ const Total = styled.div`
     }
     textarea {
         resize: none;
+        height: 28vh;
         border: 0;
         background-color: #f4f5f7;
         width: 90%;
