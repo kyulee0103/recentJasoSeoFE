@@ -15,7 +15,7 @@ const Total = styled.div`
 const Word = styled.p`
     line-height: 150%;
     color: #202123;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
 `
 

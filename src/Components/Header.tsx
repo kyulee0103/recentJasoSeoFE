@@ -35,12 +35,14 @@ function Header() {
         <>
             <Total>
                 <Main>
-                    <ImgBox
-                        onClick={() => {
-                            navigate('/')
-                        }}
-                    >
-                        <img src={Logo} alt="logo" />
+                    <ImgBox>
+                        <img
+                            onClick={() => {
+                                navigate('/')
+                            }}
+                            src={Logo}
+                            alt="logo"
+                        />
                     </ImgBox>
                 </Main>
                 <p>반갑습니다, 회원님!</p>
