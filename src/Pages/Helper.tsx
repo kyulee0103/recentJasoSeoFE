@@ -3,8 +3,7 @@ import Header from '../Components/Header'
 import BasicTabs from '../Components/BasicTabs'
 
 const White = styled.div`
-    width: 100%;
-    height: 50px;
+    height: 48px;
     background-color: white;
     padding-left: 68px;
     padding-right: 68px;

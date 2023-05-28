@@ -8,7 +8,7 @@ const Total = styled.div`
     p {
         width: 150px;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         color: #202123;
     }
     input {
@@ -16,7 +16,7 @@ const Total = styled.div`
         width: 90%;
         border: 0;
         background-color: #f4f5f7;
-        font-size: 18px;
+        font-size: 16px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;
@@ -32,7 +32,7 @@ const Total = styled.div`
         background-color: #f4f5f7;
         width: 90%;
         margin-top: 15px;
-        font-size: 18px;
+        font-size: 16px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;

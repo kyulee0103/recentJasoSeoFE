@@ -14,7 +14,7 @@ const Spot = styled.div`
 const Total = styled.div`
     margin: 15px;
     width: 30vw;
-    height: 230px;
+    height: 215px;
     background: #ffffff;
     box-shadow: 7px 6px 17px -2px #e3ddfc;
     border-radius: 10px;
@@ -34,7 +34,7 @@ const Total = styled.div`
 `
 const Title = styled.div`
     font-weight: 700;
-    font-size: 24px;
+    font-size: 240px;
     color: rgba(32, 33, 35, 0.61);
     display: flex;
     margin-top: 50px;
@@ -46,7 +46,7 @@ const Title = styled.div`
 `
 const Detail = styled.p`
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 140%;
     color: rgba(32, 33, 35, 0.61);
     margin-left: 25px;

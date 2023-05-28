@@ -11,11 +11,11 @@ const Total = styled.div`
         width: 100%;
         margin-top: 15px;
         height: 41vh;
-        font-size: 18px;
+        font-size: 16px;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 16px;
         }
         &:focus {
             outline: none;

@@ -24,7 +24,6 @@ import Loading from '../assets/123243-white-loading-spinner.json'
 import Lottie from 'lottie-react'
 
 const Total = styled.div`
-    margin-right: 68px;
     height: 70vh;
     background-color: #ffffff;
     box-shadow: 6px 11px 23px rgba(204, 209, 221, 0.5);
@@ -48,7 +47,7 @@ const GptTop = styled.div`
         margin: 0;
         color: #ffffff;
         font-weight: 700;
-        font-size: 22px;
+        font-size: 18px;
         margin-right: 10px;
     }
 `
@@ -68,7 +67,7 @@ const Top = styled.div`
         margin: 0;
         color: #202123;
         font-weight: 700;
-        font-size: 22px;
+        font-size: 18px;
     }
 `
 const ContentsBox = styled.div`
@@ -106,7 +105,7 @@ const Btn1 = styled.button`
     border: 0;
     color: #ffffff;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 `
 
 const Btn2 = styled.button`
@@ -118,7 +117,7 @@ const Btn2 = styled.button`
     color: #ffffff;
     font-weight: 600;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 `
 
 function AnswerBox({id}: {id: number}) {
