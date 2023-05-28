@@ -47,10 +47,16 @@ const Total = styled.div`
 const Line = styled.div`
     display: flex;
     align-items: center;
+    p {
+        margin: 0;
+    }
 `
 
 const Line2 = styled.div`
     display: flex;
+    p {
+        margin-top: 15px;
+    }
 `
 
 function First() {

@@ -4,8 +4,8 @@ const Total = styled.div`
     background: rgba(143, 152, 169, 0.48);
     height: 2px;
     width: 100%;
-    margin-top: 11px;
-    margin-bottom: 11px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 `
 
 function Block() {

@@ -9,7 +9,7 @@ const Total = styled.div`
         border: 0;
         background-color: #f4f5f7;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 8px;
         height: 41vh;
         font-size: 16px;
         &::placeholder {

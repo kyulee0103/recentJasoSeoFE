@@ -75,7 +75,7 @@ const ContentsBox = styled.div`
     flex: 1;
     background-color: #f4f5f7;
     height: calc(70vh - 198px);
-    padding: 22px;
+    padding: 10px 20px;
 `
 
 const AnswerFooter = styled.div`
