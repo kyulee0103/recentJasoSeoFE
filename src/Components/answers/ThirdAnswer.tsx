@@ -6,6 +6,8 @@ const Total = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    border: 0;
 `
 
 const Word = styled.p`

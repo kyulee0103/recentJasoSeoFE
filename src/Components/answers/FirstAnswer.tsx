@@ -10,6 +10,8 @@ const Total = styled.div`
         width: 50%;
         margin-top: 150px;
     }
+    width: 100%;
+    border: 0;
 `
 
 const Word = styled.p`

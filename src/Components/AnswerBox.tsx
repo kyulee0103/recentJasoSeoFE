@@ -57,6 +57,7 @@ const GptContents = styled.div`
     flex: 1;
     height: calc(75vh - 110px);
     overflow: scroll;
+    background: white;
 `
 
 const Top = styled.div`
