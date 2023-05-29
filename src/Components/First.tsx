@@ -143,7 +143,7 @@ function First() {
                 <textarea
                     value={helper.experience}
                     onChange={onChangeExperience}
-                    placeholder="활동 경험을 작성해주세요.(ex. ABC 프로젝트 마케터로 유저 유입 30% 증가) "
+                    placeholder="활동 경험을 자세하게 작성할수록 더 좋은 답변이 나옵니다.(ex. ABC 프로젝트 마케터로 유저 유입 30% 증가)"
                     required
                 />
             </Line2>

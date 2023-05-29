@@ -19,13 +19,13 @@ const Total = styled.div`
     img {
         width: 134px;
         height: 30px;
+        cursor: pointer;
     }
 `
 
 const Main = styled.div`
     width: 100%;
     text-align: center;
-    cursor: pointer;
 `
 
 const ImgBox = styled.div``

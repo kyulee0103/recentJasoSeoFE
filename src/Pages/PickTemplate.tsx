@@ -52,11 +52,10 @@ function PickTemplate() {
             <Contents>
                 <Middle>
                     <Words>
-                        <Bold>자소서 첨삭</Bold>
+                        <Bold>자소서 작성</Bold>
                         <Normal>의 시작과 끝,</Normal>
                         <br />
-                        <Normal>이젠 </Normal>
-                        <Bold>AI</Bold>
+                        <Bold>요즘자소서</Bold>
                         <Normal>로 쉽고 간편하게.</Normal>
                     </Words>
                 </Middle>
