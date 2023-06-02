@@ -114,12 +114,6 @@ const Three = styled.div`
     margin-top: 1000px;
 `
 
-const Contents = styled.div`
-    /* width: 50vw;
-    background-color: red;
-    z-index: 1000; */
-`
-
 function QuestionBox() {
     return (
         <>
@@ -128,7 +122,6 @@ function QuestionBox() {
                     <p>자주 묻는 질문</p>
                     <Round />
                 </Title>
-                {/* <Contents> */}
                 <One>
                     <QuestionCard>
                         <QPart>
@@ -199,7 +192,6 @@ function QuestionBox() {
                         <Img src={Box} alt="box" />
                     </QuestionCard>
                 </Three>
-                {/* </Contents> */}
             </Total>
         </>
     )

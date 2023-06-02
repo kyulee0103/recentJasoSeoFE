@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import First from './First'
 import Second from './Second'
 import Third from './Third'
-import {useRecoilState, useRecoilValue} from 'recoil'
+import {useRecoilState} from 'recoil'
 import {
     FirstAnswerState,
     FourthAnswerState,
