@@ -34,6 +34,7 @@ const Total = styled.div`
         margin-top: 15px;
         height: 35vh;
         font-size: 16px;
+        line-height: 150%;
         &::placeholder {
             color: #8f98a9;
             font-weight: 500;

@@ -153,8 +153,10 @@ function AnswerBox({id}: {id: number}) {
             }))
             setFirstData((curr) => ({
                 ...curr,
-                isFilled: false,
+                block: true,
             }))
+            console.log('clicked')
+            console.log(firstData.block)
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
@@ -171,7 +173,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                     setFirstData((curr) => ({
                         ...curr,
-                        isFilled: true,
+                        block: false,
                     }))
                 })
                 .catch(function (err) {
@@ -189,7 +191,7 @@ function AnswerBox({id}: {id: number}) {
             }))
             setSecondData((curr) => ({
                 ...curr,
-                isFilled: false,
+                block: true,
             }))
             axios({
                 method: 'post',
@@ -207,7 +209,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                     setSecondData((curr) => ({
                         ...curr,
-                        isFilled: true,
+                        block: false,
                     }))
                 })
                 .catch(function (err) {
@@ -226,7 +228,7 @@ function AnswerBox({id}: {id: number}) {
             }))
             setThirdData((curr) => ({
                 ...curr,
-                isFilled: false,
+                block: true,
             }))
             axios({
                 method: 'post',
@@ -244,7 +246,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                     setThirdData((curr) => ({
                         ...curr,
-                        isFilled: true,
+                        block: false,
                     }))
                 })
                 .catch(function (err) {
@@ -263,7 +265,7 @@ function AnswerBox({id}: {id: number}) {
             }))
             setFourthData((curr) => ({
                 ...curr,
-                isFilled: false,
+                block: true,
             }))
             axios({
                 method: 'post',
@@ -281,7 +283,7 @@ function AnswerBox({id}: {id: number}) {
                     }))
                     setFourthData((curr) => ({
                         ...curr,
-                        isFilled: true,
+                        block: false,
                     }))
                 })
                 .catch(function (err) {
@@ -294,6 +296,8 @@ function AnswerBox({id}: {id: number}) {
                 })
         }
     }
+
+    console.log(firstData.block)
     return (
         <>
             <Total>
@@ -334,13 +338,29 @@ function AnswerBox({id}: {id: number}) {
                             </Counts>
                             <Complete>
                                 {id === 0 &&
-                                    (firstData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                    (!firstData.block && firstData.isFilled ? (
+                                        <Btn2>작성완료</Btn2>
+                                    ) : (
+                                        <Btn1 disabled>작성완료</Btn1>
+                                    ))}
                                 {id === 1 &&
-                                    (secondData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                    (!secondData.block && secondData.isFilled ? (
+                                        <Btn2>작성완료</Btn2>
+                                    ) : (
+                                        <Btn1 disabled>작성완료</Btn1>
+                                    ))}
                                 {id === 2 &&
-                                    (thirdData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                    (!thirdData.block && thirdData.isFilled ? (
+                                        <Btn2>작성완료</Btn2>
+                                    ) : (
+                                        <Btn1 disabled>작성완료</Btn1>
+                                    ))}
                                 {id === 3 &&
-                                    (fourthData.isFilled ? <Btn2>작성완료</Btn2> : <Btn1 disabled>작성완료</Btn1>)}
+                                    (!fourthData.block && fourthData.isFilled ? (
+                                        <Btn2>작성완료</Btn2>
+                                    ) : (
+                                        <Btn1 disabled>작성완료</Btn1>
+                                    ))}
                             </Complete>
                         </AnswerFooter>
                     </form>

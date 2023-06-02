@@ -20,6 +20,7 @@ type IFirstHelperTypes = {
     question: string
     experience: string
     isFilled: boolean
+    block: boolean
 }
 
 export const firstHelperState = atom<IFirstHelperTypes>({
@@ -30,6 +31,7 @@ export const firstHelperState = atom<IFirstHelperTypes>({
         question: '',
         experience: '',
         isFilled: false,
+        block: false,
     },
 })
 
@@ -39,6 +41,7 @@ type ISecondHelperTypes = {
     contents: string
     isFilled: boolean
     counts: number
+    block: boolean
 }
 
 export const secondHelperState = atom<ISecondHelperTypes>({
@@ -49,6 +52,7 @@ export const secondHelperState = atom<ISecondHelperTypes>({
         contents: '',
         counts: 0,
         isFilled: false,
+        block: false,
     },
 })
 
@@ -56,6 +60,7 @@ type IThirdHelperTypes = {
     contents: string
     isFilled: boolean
     counts: number
+    block: boolean
 }
 
 export const thirdHelperState = atom<IThirdHelperTypes>({
@@ -64,6 +69,7 @@ export const thirdHelperState = atom<IThirdHelperTypes>({
         contents: '',
         counts: 0,
         isFilled: false,
+        block: false,
     },
 })
 
@@ -73,6 +79,7 @@ export const fourthHelperState = atom<IThirdHelperTypes>({
         contents: '',
         counts: 0,
         isFilled: false,
+        block: false,
     },
 })
 
