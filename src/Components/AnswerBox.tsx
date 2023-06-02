@@ -122,10 +122,10 @@ const Btn2 = styled.button`
 `
 
 function AnswerBox({id}: {id: number}) {
-    const firstData = useRecoilValue(firstHelperState)
-    const secondData = useRecoilValue(secondHelperState)
-    const thirdData = useRecoilValue(thirdHelperState)
-    const fourthData = useRecoilValue(fourthHelperState)
+    const [firstData, setFirstData] = useRecoilState(firstHelperState)
+    const [secondData, setSecondData] = useRecoilState(secondHelperState)
+    const [thirdData, setThirdData] = useRecoilState(thirdHelperState)
+    const [fourthData, setFourthData] = useRecoilState(fourthHelperState)
     const [firstAnswer, setFirstAnswer] = useRecoilState(FirstAnswerState)
     const [secondAnswer, setSecondAnswer] = useRecoilState(SecondAnswerState)
     const [thirdAnswer, setThirdAnswer] = useRecoilState(ThirdAnswerState)
@@ -151,6 +151,10 @@ function AnswerBox({id}: {id: number}) {
                 waiting: true,
                 answer: '',
             }))
+            setFirstData((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
@@ -165,9 +169,12 @@ function AnswerBox({id}: {id: number}) {
                         answer: response.data.data,
                         waiting: false,
                     }))
+                    setFirstData((curr) => ({
+                        ...curr,
+                        isFilled: true,
+                    }))
                 })
                 .catch(function (err) {
-                    // console.log(err)
                     setFirstAnswer((curr) => ({
                         ...curr,
                         answer: '',
@@ -179,6 +186,10 @@ function AnswerBox({id}: {id: number}) {
                 ...curr,
                 waiting: true,
                 answer: '',
+            }))
+            setSecondData((curr) => ({
+                ...curr,
+                isFilled: false,
             }))
             axios({
                 method: 'post',
@@ -193,6 +204,10 @@ function AnswerBox({id}: {id: number}) {
                         ...curr,
                         answer: response.data.data,
                         waiting: false,
+                    }))
+                    setSecondData((curr) => ({
+                        ...curr,
+                        isFilled: true,
                     }))
                 })
                 .catch(function (err) {
@@ -209,6 +224,10 @@ function AnswerBox({id}: {id: number}) {
                 waiting: true,
                 answer: '',
             }))
+            setThirdData((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
@@ -222,6 +241,10 @@ function AnswerBox({id}: {id: number}) {
                         ...curr,
                         answer: response.data.data,
                         waiting: false,
+                    }))
+                    setThirdData((curr) => ({
+                        ...curr,
+                        isFilled: true,
                     }))
                 })
                 .catch(function (err) {
@@ -238,6 +261,10 @@ function AnswerBox({id}: {id: number}) {
                 waiting: true,
                 answer: '',
             }))
+            setFourthData((curr) => ({
+                ...curr,
+                isFilled: false,
+            }))
             axios({
                 method: 'post',
                 url: process.env.REACT_APP_API_URL,
@@ -251,6 +278,10 @@ function AnswerBox({id}: {id: number}) {
                         ...curr,
                         answer: response.data.data,
                         waiting: false,
+                    }))
+                    setFourthData((curr) => ({
+                        ...curr,
+                        isFilled: true,
                     }))
                 })
                 .catch(function (err) {

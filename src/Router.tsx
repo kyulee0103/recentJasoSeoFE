@@ -5,6 +5,7 @@ import Helper from './Pages/Helper'
 import Error from './Pages/Error'
 import {isMobile} from 'react-device-detect'
 import Mobile from './Pages/Mobile'
+import Price from './Components/Price'
 
 const router = createBrowserRouter([
     isMobile
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                   {
                       path: 'helper',
                       element: <Helper />,
+                  },
+                  {
+                      path: 'price',
+                      element: <Price />,
                   },
               ],
               errorElement: <Error />,
