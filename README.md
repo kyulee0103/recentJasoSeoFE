@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# 요즘 자소서
+> 생성형 AI 기술을 활용해 자기소개서 작성 과정을 혁신합니다.   
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="800" alt="Screenshot 2023-06-06 at 6 33 25 PM" src="https://github.com/kyulee0103/recentJasoSeoFE/assets/80827003/3bd21a30-1e24-4f41-bc3e-46b435c4439b">
 
-## Available Scripts
+<br>
+<br>
 
-In the project directory, you can run:
+## MAIN FEATURES
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img width="800" alt="Screenshot 2023-06-06 at 6 31 12 PM" src="https://github.com/kyulee0103/recentJasoSeoFE/assets/80827003/0c1165a8-e566-4432-a136-80dd3e363152">
 
-### `npm test`
+### 1) 초안 작성
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+→ 지원 회사, 직무, 질문, 활동 경험을 입력하면, 자기소개서 형식에 적합하고 개인화된 자기소개서 초안을 작성합니다.
+<br>
 
-### `npm run build`
+### 2) 첨삭 및 피드백
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+→ 질문, 직무 및 직군, 자기소개서만 입력하면, 자기소개서의 전반적인 개선점 및 문장 가독성에 대한 개선점을 즉각적으로 제공합니다.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3) 면접 대비 기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+→ 자기소개서를 입력하면, 자기소개서 기반 예상 면접 질문을 제공합니다.
+<br>
+<br>
 
-### `npm run eject`
+## PROBLEM
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+매우 노동집약적인 자기소개서 작성 과정은 고비용, 비효율성, 비즉시성,프라이버시 문제를 가지고 있습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 매우 높은 비용
+    - 취업 준비생은 자기소개서 첨삭 및 컨설팅을 위해 연 평균 37만원을 소비하고 있습니다. 특히, 자기소개서 첨삭은 한 번에 4~8만원 이라는 높은 가격을 형성하고 있어, 취업 준비생들에게 큰 경제적 부담을 주고 있습니다.
+- 비효율성
+    - 취업 준비생들은 한 해에 200시간 가량을 자기소개서 작성에 할애하고 있습니다. 이는 다른 중요한 취업 준비 활동에 시간을 할애하는 것이 아닌 문서 작성에 과도한 시간을 할애하는 비효율성을 야기합니다.
+- 비즉시성
+    - 기존 첨삭 및 컨설팅 서비스는 평균적으로 2~3일이 소요되며, 학교 선배나 지원 프로그램을 통한 첨삭은 그 이상의 시간이 걸려  긴급한 지원 및 수시 채용 지원에 제약이 있습니다.
+- 프라이버시 문제
+    - 50명과의 인터뷰에서 약 30%의 취업준비생이 제3자를 통해 도움을 받는 것에 대한 불편함을 느끼는 것을 확인하였습니다. 이는, 필요한 피드백을 받지 못하는 문제로 이어져, 결국 취업에 실패하는 결과를 초래할 수 있습니다.
+    
+    
+    <br><br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## SOLUTION
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 저렴한 금액
+- 효율성 혁신
+- 즉각적인 피드백
+- 제3자와의 관계 제거
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
