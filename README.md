@@ -1,7 +1,10 @@
 # 요즘 자소서
-> 생성형 AI 기술을 활용해 자기소개서 작성 과정을 혁신합니다.   
+> 생성형 AI 기술을 활용해 자기소개서 작성 과정을 혁신합니다.  
+
 
 <img width="800" alt="Screenshot 2023-06-06 at 6 33 25 PM" src="https://github.com/kyulee0103/recentJasoSeoFE/assets/80827003/3bd21a30-1e24-4f41-bc3e-46b435c4439b">
+
+### 링크 : https://yozmjasoseo.com
 
 <br>
 <br>
